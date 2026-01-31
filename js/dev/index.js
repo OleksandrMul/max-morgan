@@ -28,3 +28,57 @@ import "./common.min.js";
     fetch(link.href, fetchOpts);
   }
 })();
+function getHours() {
+  const now = /* @__PURE__ */ new Date();
+  const hours = now.getHours();
+  return hours;
+}
+function darkliteInit() {
+  const htmlBlock = document.documentElement;
+  const saveUserTheme = localStorage.getItem("fls-user-theme");
+  let userTheme;
+  if (document.querySelector("[data-fls-darklite-time]")) {
+    let customRange = document.querySelector("[data-fls-darklite-time]").dataset.flsDarkliteTime;
+    customRange = customRange || "18,5";
+    const timeFrom = +customRange.split(",")[0];
+    const timeTo = +customRange.split(",")[1];
+    console.log(timeFrom);
+    userTheme = getHours() >= timeFrom && getHours() <= timeTo ? "dark" : "light";
+  } else {
+    if (window.matchMedia) {
+      userTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    }
+    window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => {
+      !saveUserTheme ? changeTheme() : null;
+    });
+  }
+  const themeButton = document.querySelector("[data-fls-darklite-set]");
+  const resetButton = document.querySelector("[data-fls-darklite-reset]");
+  if (themeButton) {
+    themeButton.addEventListener("click", function(e) {
+      changeTheme(true);
+    });
+  }
+  if (resetButton) {
+    resetButton.addEventListener("click", function(e) {
+      localStorage.setItem("fls-user-theme", "");
+    });
+  }
+  function setThemeClass() {
+    htmlBlock.setAttribute(`data-fls-darklite-${saveUserTheme ? saveUserTheme : userTheme}`, "");
+  }
+  setThemeClass();
+  function changeTheme(saveTheme = false) {
+    let currentTheme = htmlBlock.hasAttribute("data-fls-darklite-light") ? "light" : "dark";
+    let newTheme;
+    if (currentTheme === "light") {
+      newTheme = "dark";
+    } else if (currentTheme === "dark") {
+      newTheme = "light";
+    }
+    htmlBlock.removeAttribute(`data-fls-darklite-${currentTheme}`);
+    htmlBlock.setAttribute(`data-fls-darklite-${newTheme}`, "");
+    saveTheme ? localStorage.setItem("fls-user-theme", newTheme) : null;
+  }
+}
+document.querySelector("[data-fls-darklite]") ? window.addEventListener("load", darkliteInit) : null;
