@@ -4,146 +4,115 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="shortcut icon" href="./assets/img/favicon.ico">
-		<title>Home Page</title>
-		<script type="module" crossorigin="" src="./js/index.min.js?v=1769855545811"></script>
-		<link rel="modulepreload" crossorigin="" href="./js/common.min.js?v=1769855545811">
-		<link rel="stylesheet" crossorigin="" href="./css/index.min.css?v=1769855545811">
+		<title>Home</title>
+		<script type="module" crossorigin="" src="./js/index.min.js?v=1770997330389"></script>
+		<link rel="modulepreload" crossorigin="" href="./js/common.min.js?v=1770997330389">
+		<link rel="stylesheet" crossorigin="" href="./css/index.min.css?v=1770997330389">
 	</head>
 	<body>
 		<div class="wrapper">
 			<header data-fls-header="" class="header">
 				<div class="header__container">
-					<!-- <include src="@components/layout/menu/menu.html" locals='{"active":"Home"}'></include> -->
+					<div class="header__body">
+						<svg class="header__logo" width="91" height="39" viewbox="0 0 91 39" xmlns="http://www.w3.org/2000/svg">
+							<path d="M0 0H11.6733L21.5757 24.1465H22.0327L31.9351 0H43.6084V39H34.4297V15.0439H34.106L24.7368 38.7524H18.8716L9.50244 14.9106H9.17871V39H0V0Z"></path>
+							<path d="M53.3917 0H57.505L71.6539 33.9727H71.9967L86.1456 0H90.2589V39H86.9073V7.52197H86.6027L73.444 39H70.2067L57.048 7.52197H56.7433V39H53.3917V0Z"></path>
+						</svg>
+						<div class="header__menu menu">
+							<nav class="menu__body">
+								<ul class="menu__list">
+									<li class="menu__item">
+										<a href="/" class="menu__link menu__link--active">Home</a>
+									</li>
+									<li class="menu__item">
+										<a href="about.html" class="menu__link">About</a>
+									</li>
+									<li class="menu__item">
+										<a href="portfolio.html" class="menu__link">Portfolio</a>
+									</li>
+									<li class="menu__item">
+										<a href="published.html" class="menu__link">Published</a>
+									</li>
+								</ul>
+							</nav>
+						</div>
+						<div class="header__actions">
+							<div data-fls-darklite="" class="theme">
+								<button data-fls-darklite-set="" type="button" class="theme__change"></button>
+								<button data-fls-darklite-reset="" type="button" class="theme__reset"></button>
+							</div>
+							<button type="button" data-fls-button="" class="header__button button button--head">Contact</button>
+							<button type="button" data-fls-menu="" class="header__icon-menu icon-menu">
+								<span></span>
+							</button>
+						</div>
+					</div>
 				</div>
 			</header>
 			<main class="page">
-				<div data-fls-index="" class="index">
-					<h1 class="title">Capturing Beauty in Every Frame</h1>
-					<div class="header__actions">
-						<div class="theme">
-							<button data-fls-darklite-set="" type="button" class="theme__change"></button>
-							<button data-fls-darklite-reset="" type="button" class="theme__reset"></button>
+				<section data-fls-index="" class="page__hero hero">
+					<div class="hero__content">
+						<div class="hero__container">
+							<div data-fls-blockhead="" class="hero__blockhead blockhead">
+								<div class="blockhead__content">
+									<h1 data-fls-title="" class="blockhead__title title title--hero">Capturing Beauty in Every Frame</h1>
+									<div class="blockhead__text">
+										<p>Fashion Photographer based in Jakarta | Editorial • Campaign • Runway</p>
+									</div>
+								</div>
+								<div class="blockhead__actions">
+									<a href="#" data-fls-button="" class="button button--white">View My Portfolio</a>
+									<a href="#" data-fls-button="" class="button">About Me</a>
+								</div>
+							</div>
+						</div>
+						<div data-fls-gallery="" class="hero__gallery gallery">
+							<div class="gallery__inner">
+								<div class="gallery__column">
+									<a role="button" aria-label="Open image: A dynamic portrait showcasing hair movement of a woman in black attire." href="./assets/img/hero/movement-portrait.webp" class="gallery__image">
+										<picture>
+											<img alt="A dynamic portrait showcasing hair movement of a woman in black attire." class="gallery__preview" src="./assets/img/hero/movement-portrait-preview.webp">
+										</picture>
+									</a>
+								</div>
+								<div class="gallery__column">
+									<a role="button" aria-label="Open image: A traditional Mayan woman carrying textiles while walking in a park." href="./assets/img/hero/mayan-woman.webp" class="gallery__image">
+										<picture>
+											<img alt="A traditional Mayan woman carrying textiles while walking in a park." class="gallery__preview" src="./assets/img/hero/mayan-woman-preview.webp">
+										</picture>
+									</a>
+									<a role="button" aria-label="Open image: A serene portrait of a woman with delicate makeup and a floral headpiece." href="./assets/img/hero/serene-woman.webp" class="gallery__image">
+										<picture>
+											<img alt="A serene portrait of a woman with delicate makeup and a floral headpiece." class="gallery__preview" src="./assets/img/hero/serene-woman-preview.webp">
+										</picture>
+									</a>
+								</div>
+								<div class="gallery__column">
+									<a role="button" aria-label="Open image: A stylish man wearing a leather outfit, sitting confidently in a garage." href="./assets/img/hero/stylish-man.webp" class="gallery__image">
+										<picture>
+											<img alt="A stylish man wearing a leather outfit, sitting confidently in a garage." class="gallery__preview" src="./assets/img/hero/stylish-man-preview.webp">
+										</picture>
+									</a>
+								</div>
+								<div class="gallery__column">
+									<a role="button" aria-label="Open image: A sophisticated woman in a white jacket, standing with a flower in hand." href="./assets/img/hero/sophisticated-woman.webp" class="gallery__image">
+										<picture>
+											<img alt="A sophisticated woman in a white jacket, standing with a flower in hand." class="gallery__preview" src="./assets/img/hero/sophisticated-woman-preview.webp">
+										</picture>
+									</a>
+								</div>
+								<div class="gallery__column">
+									<a role="button" aria-label="Open image: A confident model wearing a knit sweater and black pants, showcasing a bold look." href="./assets/img/hero/confident-model.webp" class="gallery__image">
+										<picture>
+											<img alt="A confident model wearing a knit sweater and black pants." class="gallery__preview" src="./assets/img/hero/confident-model-preview.webp">
+										</picture>
+									</a>
+								</div>
+							</div>
 						</div>
 					</div>
-					<!-- About -->
-					<picture>
-						<source media="(max-width: 600px)" srcset="./assets/img/about/photographer-portrait-600.webp" type="image/webp">
-						<img alt="A portrait of a professional photographer holding a camera in a studio setting." src="./assets/img/about/photographer-portrait.webp">
-					</picture>
-					<picture>
-						<img alt="Inside a modern photography studio with a black cat and a tripod." src="./assets/img/about/photography-studio.webp">
-					</picture>
-					<picture>
-						<img alt="A professional photography studio setup featuring lighting equipment and reflectors." src="./assets/img/about/studio-lighting.webp">
-					</picture>
-					<!-- Hero -->
-					<picture>
-						<source media="(max-width: 600px)" srcset="./assets/img/hero/movement-portrait-600.webp" type="image/webp">
-						<img alt="A dynamic portrait showcasing hair movement of a woman in black attire." src="./assets/img/hero/movement-portrait.webp">
-					</picture>
-					<picture>
-						<img alt="A traditional Mayan woman carrying textiles while walking in a park." src="./assets/img/hero/mayan-woman.webp">
-					</picture>
-					<picture>
-						<img alt="A serene portrait of a woman with delicate makeup and a floral headpiece." src="./assets/img/hero/serene-woman.webp">
-					</picture>
-					<picture>
-						<source media="(max-width: 600px)" srcset="./assets/img/hero/stylish-man-600.webp" type="image/webp">
-						<img alt="A stylish man wearing a leather outfit, sitting confidently in a garage." src="./assets/img/hero/stylish-man.webp">
-					</picture>
-					<picture>
-						<source media="(max-width: 600px)" srcset="./assets/img/hero/sophisticated-woman-600.webp" type="image/webp">
-						<img alt="A sophisticated woman in a white jacket, standing with a flower in hand." src="./assets/img/hero/sophisticated-woman.webp">
-					</picture>
-					<picture>
-						<source media="(max-width: 600px)" srcset="./assets/img/hero/confident-model-600.webp" type="image/webp">
-						<img alt="A confident model wearing a knit sweater and black pants, showcasing a bold look." src="./assets/img/hero/confident-model.webp">
-					</picture>
-					<!-- Not Found -->
-					<picture>
-						<source media="(max-width: 600px)" srcset="./assets/img/not-found/showcase-platform-600.webp" type="image/webp">
-						<source media="(max-width: 1200px)" srcset="./assets/img/not-found/showcase-platform-1200.webp" type="image/webp">
-						<img alt="Modern showcase platform in gray, perfect for product displays." src="./assets/img/not-found/showcase-platform.webp">
-					</picture>
-					<picture>
-						<source media="(max-width: 600px)" srcset="./assets/img/not-found/circular-podium-600.webp" type="image/webp">
-						<source media="(max-width: 1200px)" srcset="./assets/img/not-found/circular-podium-1200.webp" type="image/webp">
-						<img alt="A circular podium design for showcasing products." src="./assets/img/not-found/circular-podium.webp">
-					</picture>
-					<!-- Portfolio -->
-					<picture>
-						<source media="(max-width: 600px)" srcset="./assets/img/portfolio/trendy-female-600.webp" type="image/webp">
-						<source media="(max-width: 1200px)" srcset="./assets/img/portfolio/trendy-female-1200.webp" type="image/webp">
-						<img alt="A trendy female model with pink hair posing in a stylish outfit on a city street." src="./assets/img/portfolio/trendy-female.webp">
-					</picture>
-					<picture>
-						<source media="(max-width: 600px)" srcset="./assets/img/portfolio/woman-earrings-600.webp" type="image/webp">
-						<source media="(max-width: 1200px)" srcset="./assets/img/portfolio/woman-earrings-1200.webp" type="image/webp">
-						<img alt="Portrait of a woman with glamorous makeup and statement earrings." src="./assets/img/portfolio/woman-earrings.webp">
-					</picture>
-					<picture>
-						<source media="(max-width: 600px)" srcset="./assets/img/portfolio/woman-relaxing-600.webp" type="image/webp">
-						<source media="(max-width: 1200px)" srcset="./assets/img/portfolio/woman-relaxing-1200.webp" type="image/webp">
-						<img alt="A woman relaxing in a modern space, sitting comfortably in a chair by the window." src="./assets/img/portfolio/woman-relaxing.webp">
-					</picture>
-					<picture>
-						<source media="(max-width: 600px)" srcset="./assets/img/portfolio/interior-woman-600.webp" type="image/webp">
-						<source media="(max-width: 1200px)" srcset="./assets/img/portfolio/interior-woman-1200.webp" type="image/webp">
-						<img alt="A stylish woman standing by a modern window in a minimalist interior space." src="./assets/img/portfolio/interior-woman.webp">
-					</picture>
-					<picture>
-						<source media="(max-width: 600px)" srcset="./assets/img/portfolio/thoughtful-woman-600.webp" type="image/webp">
-						<source media="(max-width: 1200px)" srcset="./assets/img/portfolio/thoughtful-woman-1200.webp" type="image/webp">
-						<img alt="A thoughtful woman resting her chin on her hand while sitting at a table by a window." src="./assets/img/portfolio/thoughtful-woman.webp">
-					</picture>
-					<picture>
-						<source media="(max-width: 600px)" srcset="./assets/img/portfolio/serene-garden-600.webp" type="image/webp">
-						<source media="(max-width: 1200px)" srcset="./assets/img/portfolio/serene-garden-1200.webp" type="image/webp">
-						<img alt="A serene portrait of a woman in a garden, highlighting her elegant attire and the surrounding flora." src="./assets/img/portfolio/serene-garden.webp">
-					</picture>
-					<picture>
-						<source media="(max-width: 600px)" srcset="./assets/img/portfolio/city-street-fashion-600.webp" type="image/webp">
-						<source media="(max-width: 1200px)" srcset="./assets/img/portfolio/city-street-fashion-1200.webp" type="image/webp">
-						<img alt="A fashionable woman on a city street wearing a black coat and stylish accessories." src="./assets/img/portfolio/city-street-fashion.webp">
-					</picture>
-					<picture>
-						<source media="(max-width: 600px)" srcset="./assets/img/portfolio/urban-fashion-600.webp" type="image/webp">
-						<source media="(max-width: 1200px)" srcset="./assets/img/portfolio/urban-fashion-1200.webp" type="image/webp">
-						<img alt="Portrait of a woman in urban fashion, showcasing a checkered top and a headscarf." src="./assets/img/portfolio/urban-fashion.webp">
-					</picture>
-					<picture>
-						<source media="(max-width: 600px)" srcset="./assets/img/portfolio/capturing-moments-600.webp" type="image/webp">
-						<source media="(max-width: 1200px)" srcset="./assets/img/portfolio/capturing-moments-1200.webp" type="image/webp">
-						<img alt="A photographer capturing moments with a camera in a natural setting." src="./assets/img/portfolio/capturing-moments.webp">
-					</picture>
-					<picture>
-						<source media="(max-width: 600px)" srcset="./assets/img/portfolio/rooftop-photographer-600.webp" type="image/webp">
-						<source media="(max-width: 1200px)" srcset="./assets/img/portfolio/rooftop-photographer-1200.webp" type="image/webp">
-						<img alt="A photographer on a rooftop, dressed in a black puffer jacket, taking photos of the street below." src="./assets/img/portfolio/rooftop-photographer.webp">
-					</picture>
-					<picture>
-						<source media="(max-width: 600px)" srcset="./assets/img/portfolio/lakeside-relaxation-600.webp" type="image/webp">
-						<source media="(max-width: 1200px)" srcset="./assets/img/portfolio/lakeside-relaxation-1200.webp" type="image/webp">
-						<img alt="A woman relaxing by the lakeside, enjoying the serene environment." src="./assets/img/portfolio/lakeside-relaxation.webp">
-					</picture>
-					<!-- Published -->
-					<picture>
-						<source media="(max-width: 600px)" srcset="./assets/img/published/elegant-woman-600.webp" type="image/webp">
-						<img alt="Elegant woman wearing a black dress with a flowing scarf against a dramatic sky." src="./assets/img/published/elegant-woman.webp">
-					</picture>
-					<picture>
-						<source media="(max-width: 600px)" srcset="./assets/img/published/elegant-dancer-600.webp" type="image/webp">
-						<img alt="A dancer in a flowing red dress performing gracefully against a dark backdrop." src="./assets/img/published/elegant-dancer.webp">
-					</picture>
-					<picture>
-						<source media="(max-width: 600px)" srcset="./assets/img/published/modern-business-600.webp" type="image/webp">
-						<img alt="A woman in a stylish gray business suit lounging on a ledge with a flower beside her." src="./assets/img/published/modern-business.webp">
-					</picture>
-					<picture>
-						<source media="(max-width: 600px)" srcset="./assets/img/published/expressive-female-600.webp" type="image/webp">
-						<img alt="Expressive portrait of a woman with striking features, partially concealed by black paper, emphasizing her eyes." src="./assets/img/published/expressive-female.webp">
-					</picture>
-				</div>
+					<h2 data-fls-title="" class="hero__author title title--big">MAX MORGAN</h2>
+				</section>
 			</main>
 			<footer data-fls-footer="" class="footer">
 				<div class="footer__container"></div>
