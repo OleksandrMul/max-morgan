@@ -135,6 +135,12 @@ let bodyLock = (delay = 500) => {
     }, delay);
   }
 };
+function getDigFormat(item, sepp = " ") {
+  return item.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, `$1${sepp}`);
+}
+function uniqArray(array) {
+  return array.filter((item, index, self) => self.indexOf(item) === index);
+}
 const gotoBlock = (targetBlock, noHeader = false, speed = 500, offsetTop = 0) => {
   const targetBlockElement = document.querySelector(targetBlock);
   if (targetBlockElement) {
@@ -176,6 +182,8 @@ export {
   bodyUnlock as c,
   bodyLockStatus as d,
   bodyLockToggle as e,
-  gotoBlock as g,
-  slideUp as s
+  gotoBlock as f,
+  getDigFormat as g,
+  slideUp as s,
+  uniqArray as u
 };

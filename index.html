@@ -5,9 +5,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="shortcut icon" href="./assets/img/favicon.ico">
 		<title>Home</title>
-		<script type="module" crossorigin="" src="./js/index.min.js?v=1771840806402"></script>
-		<link rel="modulepreload" crossorigin="" href="./js/common.min.js?v=1771840806402">
-		<link rel="stylesheet" crossorigin="" href="./css/index.min.css?v=1771840806402">
+		<script type="module" crossorigin="" src="./js/index.min.js?v=1771847635861"></script>
+		<link rel="modulepreload" crossorigin="" href="./js/common.min.js?v=1771847635861">
+		<link rel="stylesheet" crossorigin="" href="./css/index.min.css?v=1771847635861">
 	</head>
 	<body>
 		<div class="wrapper">
@@ -50,13 +50,13 @@
 				</div>
 			</header>
 			<main class="page">
-				<section data-fls-index="" class="page__hero hero">
+				<section data-fls-index="" class="page__hero hero" aria-labelledby="hero-title" aria-describedby="hero-desc">
 					<div class="hero__content">
 						<div class="hero__container">
 							<div data-fls-blockhead="" class="hero__blockhead blockhead">
 								<div class="blockhead__content">
-									<h1 data-fls-title="" class="blockhead__title title title--hero">Capturing Beauty in Every Frame</h1>
-									<div class="blockhead__text">
+									<h1 id="hero-title" data-fls-title="" class="blockhead__title title title--hero">Capturing Beauty in Every Frame</h1>
+									<div id="hero-desc" class="blockhead__text">
 										<p>Fashion Photographer based in Jakarta | Editorial • Campaign • Runway</p>
 									</div>
 								</div>
@@ -100,6 +100,62 @@
 						</div>
 					</div>
 					<h2 data-fls-title="" class="hero__author title title--big">MAX MORGAN</h2>
+				</section>
+				<section data-fls-index="" class="page__about about" aria-labelledby="about-title" aria-describedby="about-desc">
+					<div class="about__container">
+						<div class="about__column">
+							<div data-fls-blockhead="" class="about__blockhead blockhead">
+								<div class="blockhead__content">
+									<span class="blockhead__label">About Me</span>
+									<h2 id="about-title" data-fls-title="" class="blockhead__title title">The Art Behind the Lens</h2>
+								</div>
+							</div>
+							<picture>
+								<source media="(max-width: 600px)" srcset="./assets/img/about/photographer-portrait-600.webp" type="image/webp">
+								<img class="about__hero-image" alt="A portrait of a professional photographer holding a camera in a studio setting." src="./assets/img/about/photographer-portrait.webp">
+							</picture>
+						</div>
+						<div class="about__column">
+							<div class="about__images">
+								<picture>
+									<img alt="A professional photography studio setup featuring lighting equipment and reflectors." src="./assets/img/about/studio-lighting.webp">
+								</picture>
+								<picture>
+									<img alt="Inside a modern photography studio with a black cat and a tripod." src="./assets/img/about/photography-studio.webp">
+								</picture>
+							</div>
+							<div class="about__content">
+								<div id="about-desc" class="about__text">
+									<p>
+										Hello, I'm Max — a fashion photographer who believes that the most powerful images are born from authentic connections. My approach to fashion photography goes beyond documenting clothing—it's about capturing moments where design, identity, and emotion intersect. I believe in minimal intervention, allowing natural light and authentic movement to guide my compositions. Every shoot begins with a concept board, evolves through collaborative energy on set, and culminates in images that honor both the designer's vision and the model's unique presence.
+									</p>
+								</div>
+								<ul data-fls-watcher="" data-fls-watcher-once="" class="about__advantages advantages">
+									<li class="advantages__item item-advantage">
+										<div class="item-advantage__inner">
+											<div data-fls-digcounter="" class="item-advantage__digit">98</div>
+											<span>%</span>
+										</div>
+										<span class="item-advantage__description">Client Return Rate for repeat collaborations</span>
+									</li>
+									<li class="advantages__item item-advantage">
+										<div class="item-advantage__inner">
+											<div data-fls-digcounter="" class="item-advantage__digit">85</div>
+											<span>+</span>
+										</div>
+										<span class="item-advantage__description">Professional Models have worked</span>
+									</li>
+									<li class="advantages__item item-advantage">
+										<div class="item-advantage__inner">
+											<div data-fls-digcounter="" class="item-advantage__digit">12</div>
+											<span>+</span>
+										</div>
+										<span class="item-advantage__description">Fashion Weeks documented</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
 				</section>
 			</main>
 			<footer data-fls-footer="" class="footer">
