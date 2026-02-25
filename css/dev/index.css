@@ -217,15 +217,15 @@ html:not([data-fls-touch]) .gallery__inner:has(.gallery__image:hover) .gallery__
   column-gap: 2rem;
   grid-template-columns: repeat(2, 1fr);
 }
-.about__images img {
-  object-fit: cover;
-  aspect-ratio: 268/296;
-}
-.about__images img:nth-child(2n+1) {
+.about__images picture:nth-child(2n+1) {
   margin-top: 9.25rem;
 }
-.about__images img:nth-child(2n) {
+.about__images picture:nth-child(2n) {
   margin-top: 4.625rem;
+}
+.about__images picture img {
+  object-fit: cover;
+  aspect-ratio: 268/296;
 }
 .about__content {
   display: flex;
