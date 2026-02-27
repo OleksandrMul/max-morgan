@@ -1476,6 +1476,7 @@ textarea.input {
   object-fit: cover;
   max-width: 100%;
   transition: scale 0.4s ease;
+  will-change: scale;
 }
 html:not([data-fls-touch]) .gallery-card__image-link:hover::after {
   opacity: 0.3;
