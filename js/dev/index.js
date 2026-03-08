@@ -1,5 +1,6 @@
 import "./popup.min.js";
 import { g as getDigFormat, u as uniqArray } from "./common.min.js";
+import "./labels.min.js";
 import "./blockhead.min.js";
 var __assign = function() {
   __assign = Object.assign || function __assign2(t) {
