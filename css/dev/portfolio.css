@@ -68,9 +68,6 @@
   }
 }
 @media (max-width: 29.99875em) {
-  .portfolio-card::before {
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.76) 0%, rgba(0, 0, 0, 0.79) 100%);
-  }
   .portfolio-card__button {
     width: 100%;
   }
