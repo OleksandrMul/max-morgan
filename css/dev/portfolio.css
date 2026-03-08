@@ -77,7 +77,7 @@
     gap: 1.25rem;
   }
   .portfolio-card__body {
-    padding-top: 1.5625rem;
+    padding-top: 1.875rem;
   }
   .portfolio-card__body {
     padding-bottom: 2.1875rem;
@@ -97,7 +97,7 @@
     gap: clamp( 1.25rem , 0.92032967033125rem  +  1.6483516484vw , 2.1875rem );
   }
   .portfolio-card__body {
-    padding-top: clamp( 1.5625rem , -4.10782967033125rem  +  28.3516483516vw , 17.6875rem );
+    padding-top: clamp( 1.875rem , -3.6854395604375rem  +  27.8021978022vw , 17.6875rem );
   }
   .portfolio-card__body {
     padding-bottom: clamp( 2.1875rem , -3.26304945055rem  +  27.2527472527vw , 17.6875rem );
