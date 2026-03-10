@@ -188,6 +188,10 @@
   .item-article:nth-child(2n) {
     flex-direction: row-reverse;
   }
+  .item-article__content {
+    position: sticky;
+    top: 4.375rem;
+  }
 }
 @media (width > 61.99875em) and (width <= 76.875em) {
   .article__header {

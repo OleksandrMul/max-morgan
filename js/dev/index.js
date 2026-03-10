@@ -2402,3 +2402,162 @@ class ScrollWatcher {
   }
 }
 document.querySelector("[data-fls-watcher]") ? window.addEventListener("load", () => new ScrollWatcher({})) : null;
+function preloader() {
+  const preloaderImages = document.querySelectorAll("img");
+  const htmlDocument = document.documentElement;
+  const isPreloaded = localStorage.getItem(location.href) && document.querySelector('[data-fls-preloader="true"]');
+  if (preloaderImages.length && !isPreloaded) {
+    let setValueProgress = function(progress2) {
+      showPecentLoad ? showPecentLoad.innerText = `${progress2}%` : null;
+      showLineLoad ? showLineLoad.style.width = `${progress2}%` : null;
+    }, imageLoaded = function() {
+      imagesLoadedCount++;
+      progress = Math.round(100 / preloaderImages.length * imagesLoadedCount);
+      const intervalId = setInterval(() => {
+        counter >= progress ? clearInterval(intervalId) : setValueProgress(++counter);
+        counter >= 100 ? addLoadedClass() : null;
+      }, 10);
+    };
+    const preloaderTemplate = `
+			<div class="fls-preloader">
+				<div class="fls-preloader__body">
+					<div class="fls-preloader__counter">0%</div>
+				</div>
+			</div>`;
+    document.body.insertAdjacentHTML("beforeend", preloaderTemplate);
+    document.querySelector(".fls-preloader");
+    const showPecentLoad = document.querySelector(".fls-preloader__counter"), showLineLoad = document.querySelector(".fls-preloader__line span");
+    let imagesLoadedCount = 0;
+    let counter = 0;
+    let progress = 0;
+    htmlDocument.setAttribute("data-fls-preloader-loading", "");
+    htmlDocument.setAttribute("data-fls-scrolllock", "");
+    preloaderImages.forEach((preloaderImage) => {
+      const imgClone = document.createElement("img");
+      if (imgClone) {
+        imgClone.onload = imageLoaded;
+        imgClone.onerror = imageLoaded;
+        preloaderImage.dataset.src ? imgClone.src = preloaderImage.dataset.src : imgClone.src = preloaderImage.src;
+      }
+    });
+    setValueProgress(progress);
+    const preloaderOnce = () => localStorage.setItem(location.href, "preloaded");
+    document.querySelector('[data-fls-preloader="true"]') ? preloaderOnce() : null;
+  } else {
+    addLoadedClass();
+  }
+  function addLoadedClass() {
+    htmlDocument.setAttribute("data-fls-preloader-loaded", "");
+    htmlDocument.removeAttribute("data-fls-preloader-loading");
+    htmlDocument.removeAttribute("data-fls-scrolllock");
+  }
+}
+document.addEventListener("DOMContentLoaded", preloader);
+class Parallax {
+  constructor(parents) {
+    if (!parents.length) return;
+    this.items = [];
+    parents.forEach((parent) => {
+      this.items.push(new Parallax.Item(parent));
+    });
+  }
+}
+Parallax.Item = class {
+  constructor(parent) {
+    this.parent = parent;
+    this.elements = parent.querySelectorAll("[data-fls-parallax]");
+    this.animation = this.animationFrame.bind(this);
+    this.offset = 0;
+    this.value = 0;
+    this.smooth = parent.dataset.flsParallaxSmooth ? Number(parent.dataset.flsParallaxSmooth) : 15;
+    this.enabled = false;
+    this.initMedia();
+  }
+  // ===============================
+  // MEDIA INIT (DynamicAdapt style)
+  // ===============================
+  initMedia() {
+    const data = this.parent.getAttribute("data-fls-parallax-parent");
+    if (!data || data === "") {
+      this.enable();
+      return;
+    }
+    const dataArray = data.split(",");
+    this.breakpoint = Number(dataArray[0]) || 767.98;
+    this.type = dataArray[1] ? dataArray[1].trim() : "max";
+    const mediaQuery = this.type === "min" ? `(min-width: ${this.breakpoint}px)` : `(max-width: ${this.breakpoint}px)`;
+    this.matchMedia = window.matchMedia(mediaQuery);
+    this.mediaHandler(this.matchMedia);
+    this.matchMedia.addEventListener("change", () => {
+      this.mediaHandler(this.matchMedia);
+    });
+  }
+  mediaHandler(media) {
+    if (media.matches) {
+      this.disable();
+    } else {
+      this.enable();
+    }
+  }
+  // ===============================
+  // ENABLE / DISABLE
+  // ===============================
+  enable() {
+    if (this.enabled) return;
+    this.enabled = true;
+    this.animationID = requestAnimationFrame(this.animation);
+  }
+  disable() {
+    if (!this.enabled) return;
+    this.enabled = false;
+    cancelAnimationFrame(this.animationID);
+    this.elements.forEach((el) => {
+      el.style.transform = "";
+    });
+  }
+  // ===============================
+  // PARALLAX CORE
+  // ===============================
+  animationFrame() {
+    if (!this.enabled) return;
+    const topToWindow = this.parent.getBoundingClientRect().top;
+    const heightParent = this.parent.offsetHeight;
+    const heightWindow = window.innerHeight;
+    const positionParent = {
+      top: topToWindow - heightWindow,
+      bottom: topToWindow + heightParent
+    };
+    const centerPoint = this.parent.dataset.flsParallaxCenter || "center";
+    if (positionParent.top < 30 && positionParent.bottom > -30) {
+      switch (centerPoint) {
+        case "top":
+          this.offset = -topToWindow;
+          break;
+        case "center":
+          this.offset = heightWindow / 2 - (topToWindow + heightParent / 2);
+          break;
+        case "bottom":
+          this.offset = heightWindow - (topToWindow + heightParent);
+          break;
+      }
+    }
+    this.value += (this.offset - this.value) / this.smooth;
+    this.animationID = requestAnimationFrame(this.animation);
+    this.elements.forEach((el) => {
+      const p = {
+        axis: el.dataset.axis || "v",
+        direction: el.dataset.flsParallaxDirection ? el.dataset.flsParallaxDirection + "1" : "-1",
+        coefficient: el.dataset.flsParallaxCoefficient ? Number(el.dataset.flsParallaxCoefficient) : 5,
+        additionalProperties: el.dataset.flsParallaxProperties || ""
+      };
+      this.applyTransform(el, p);
+    });
+  }
+  applyTransform(el, p) {
+    const value = (p.direction * (this.value / p.coefficient)).toFixed(2);
+    el.style.transform = p.axis === "h" ? `translate3D(${value}px,0,0) ${p.additionalProperties}` : `translate3D(0,${value}px,0) ${p.additionalProperties}`;
+  }
+};
+if (document.querySelector("[data-fls-parallax-parent]")) {
+  new Parallax(document.querySelectorAll("[data-fls-parallax-parent]"));
+}
