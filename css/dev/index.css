@@ -102,7 +102,7 @@ html:not([data-fls-touch]) .work-card__link:hover::after {
   translate: 0 5%;
 }
 .hero__author.--watcher-view {
-  animation: show-author-text 0.6s ease forwards 0.4s;
+  animation: show-author-text 0.8s ease forwards 0.5s;
 }
 @keyframes show-author-text {
   0% {
@@ -186,16 +186,80 @@ html:not([data-fls-touch]) .gallery__inner:has(.gallery__image:hover) .gallery__
 .about__blockhead .title {
   text-wrap: pretty;
 }
+.about__blockhead .blockhead__label {
+  opacity: 0;
+  translate: 0 15%;
+}
+.--watcher-view .about__blockhead .blockhead__label {
+  animation: show-author-label 0.8s ease forwards 0.4s;
+}
+@keyframes show-author-label {
+  0% {
+    opacity: 0;
+    translate: 0 15%;
+  }
+  100% {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+.about__blockhead .blockhead__title {
+  opacity: 0;
+  translate: 0 3%;
+}
+.--watcher-view .about__blockhead .blockhead__title {
+  animation: show-author-title 0.8s ease forwards 0.5s;
+}
+@keyframes show-author-title {
+  0% {
+    opacity: 0;
+    translate: 0 3%;
+  }
+  100% {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
 .about__hero-image {
   aspect-ratio: 568/624;
   object-fit: cover;
   max-width: 100%;
+  opacity: 0;
+  translate: 0 2%;
+}
+.--watcher-view .about__hero-image {
+  animation: show-author-hero-image 0.8s ease forwards 0.6s;
+}
+@keyframes show-author-hero-image {
+  0% {
+    opacity: 0;
+    translate: 0 2%;
+  }
+  100% {
+    opacity: 1;
+    translate: 0 0;
+  }
 }
 .about__images {
   display: grid;
 }
 .about__images {
   grid-template-columns: repeat(2, 1fr);
+  opacity: 0;
+  translate: 0 2%;
+}
+.--watcher-view .about__images {
+  animation: show-author-image 0.8s ease forwards 0.6s;
+}
+@keyframes show-author-image {
+  0% {
+    opacity: 0;
+    translate: 0 2%;
+  }
+  100% {
+    opacity: 2;
+    translate: 0 0;
+  }
 }
 .about__image img {
   object-fit: cover;
@@ -205,6 +269,40 @@ html:not([data-fls-touch]) .gallery__inner:has(.gallery__image:hover) .gallery__
 .about__content {
   display: flex;
   flex-direction: column;
+}
+.about__text {
+  opacity: 0;
+  translate: 0 5%;
+}
+.--watcher-view .about__text {
+  animation: show-author-text 0.8s ease forwards 0.7s;
+}
+@keyframes show-author-text {
+  0% {
+    opacity: 0;
+    translate: 0 5%;
+  }
+  100% {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+.about__advantages {
+  opacity: 0;
+  translate: 0 5%;
+}
+.--watcher-view .about__advantages {
+  animation: show-author-advantages 0.8s ease forwards 0.8s;
+}
+@keyframes show-author-advantages {
+  0% {
+    opacity: 0;
+    translate: 0 5%;
+  }
+  100% {
+    opacity: 1;
+    translate: 0 0;
+  }
 }
 
 .advantages {
@@ -1217,8 +1315,110 @@ html:not([data-fls-touch]) .gallery-card__image-link:hover::after {
   .about__column {
     margin-inline: -0.9375rem;
   }
+  .about__blockhead .blockhead__label {
+    opacity: 0;
+    translate: 0 5%;
+  }
+  .--watcher-view .about__blockhead .blockhead__label {
+    animation: show-author-label 0.6s ease forwards 0.1s;
+  }
+  @keyframes show-author-label {
+    0% {
+      opacity: 0;
+      translate: 0 5%;
+    }
+    100% {
+      opacity: 1;
+      translate: 0 0;
+    }
+  }
+  .about__blockhead .blockhead__title {
+    opacity: 0;
+    translate: 0 3%;
+  }
+  .--watcher-view .about__blockhead .blockhead__title {
+    animation: show-author-title 0.6s ease forwards 0.2s;
+  }
+  @keyframes show-author-title {
+    0% {
+      opacity: 0;
+      translate: 0 3%;
+    }
+    100% {
+      opacity: 1;
+      translate: 0 0;
+    }
+  }
   .about__blockhead, .about__content {
     padding-inline: 0.9375rem;
+  }
+  .about__hero-image {
+    opacity: 0;
+    translate: 0 1%;
+  }
+  .--watcher-view .about__hero-image {
+    animation: show-author-hero-image 0.6s ease forwards 0.3s;
+  }
+  @keyframes show-author-hero-image {
+    0% {
+      opacity: 0;
+      translate: 0 1%;
+    }
+    100% {
+      opacity: 1;
+      translate: 0 0;
+    }
+  }
+  .about__images {
+    opacity: 0;
+    translate: 0 1%;
+  }
+  .--watcher-view .about__images {
+    animation: show-author-image 0.6s ease forwards 0.3s;
+  }
+  @keyframes show-author-image {
+    0% {
+      opacity: 0;
+      translate: 0 1%;
+    }
+    100% {
+      opacity: 2;
+      translate: 0 0;
+    }
+  }
+  .about__text {
+    opacity: 0;
+    translate: 0 2%;
+  }
+  .--watcher-view .about__text {
+    animation: show-author-text 0.6s ease forwards 0.4s;
+  }
+  @keyframes show-author-text {
+    0% {
+      opacity: 0;
+      translate: 0 2%;
+    }
+    100% {
+      opacity: 1;
+      translate: 0 0;
+    }
+  }
+  .about__advantages {
+    opacity: 0;
+    translate: 0 2%;
+  }
+  .--watcher-view .about__advantages {
+    animation: show-author-advantages 0.6s ease forwards 0.5s;
+  }
+  @keyframes show-author-advantages {
+    0% {
+      opacity: 0;
+      translate: 0 2%;
+    }
+    100% {
+      opacity: 1;
+      translate: 0 0;
+    }
   }
   .advantages {
     grid-template-columns: 1fr 1fr;
@@ -1293,6 +1493,23 @@ html:not([data-fls-touch]) .gallery-card__image-link:hover::after {
       translate: 0 0;
     }
   }
+  .hero__author {
+    opacity: 0;
+    translate: 0 3%;
+  }
+  .hero__author.--watcher-view {
+    animation: show-author-text 0.6s ease forwards 0.2s;
+  }
+  @keyframes show-author-text {
+    0% {
+      opacity: 0;
+      translate: 0 3%;
+    }
+    100% {
+      opacity: 1;
+      translate: 0 0;
+    }
+  }
   .gallery__inner {
     columns: 2;
   }
@@ -1301,7 +1518,7 @@ html:not([data-fls-touch]) .gallery-card__image-link:hover::after {
     translate: 0 1%;
   }
   [data-fls-loaded] .gallery__inner {
-    animation: show-hero-title 0.6s ease forwards 0.4s;
+    animation: show-gallery-inner 0.6s ease forwards 0.4s;
   }
   @keyframes show-gallery-inner {
     0% {
