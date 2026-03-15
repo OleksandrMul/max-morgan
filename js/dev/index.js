@@ -1,6 +1,5 @@
 import "./popup.min.js";
 import { g as getDigFormat } from "./common.min.js";
-import "./preloader.min.js";
 import "./labels.min.js";
 import "./blockhead.min.js";
 var __assign = function() {
