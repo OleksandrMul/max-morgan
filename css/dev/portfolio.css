@@ -44,6 +44,23 @@
   font-weight: 600;
   line-height: 1.2;
 }
+.portfolio-card__title {
+  opacity: 0;
+  translate: 0 5%;
+}
+.--watcher-view .portfolio-card__title {
+  animation: show-card-title 0.8s ease forwards 0.4s;
+}
+@keyframes show-card-title {
+  0% {
+    opacity: 0;
+    translate: 0 5%;
+  }
+  100% {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
 .portfolio-card__link-title {
   text-wrap: balance;
   text-decoration: underline;
@@ -55,9 +72,41 @@
 .portfolio-card__text {
   text-wrap: pretty;
 }
+.portfolio-card__text {
+  opacity: 0;
+  translate: 0 5%;
+}
+.--watcher-view .portfolio-card__text {
+  animation: show-card-text 0.8s ease forwards 0.5s;
+}
+@keyframes show-card-text {
+  0% {
+    opacity: 0;
+    translate: 0 5%;
+  }
+  100% {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
 .portfolio-card__actions {
   display: flex;
   justify-content: center;
+  opacity: 0;
+  translate: 0 5%;
+}
+.--watcher-view .portfolio-card__actions {
+  animation: show-card-actions 0.8s ease forwards 0.6s;
+}
+@keyframes show-card-actions {
+  0% {
+    opacity: 0;
+    translate: 0 5%;
+  }
+  100% {
+    opacity: 1;
+    translate: 0 0;
+  }
 }
 .portfolio-card__button {
   border-color: var(--white);
@@ -65,6 +114,57 @@
 @media (max-width: 47.99875em) {
   .portfolio-card::before {
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.73) 0%, rgba(0, 0, 0, 0.75) 100%);
+  }
+  .portfolio-card__title {
+    opacity: 0;
+    translate: 0 3%;
+  }
+  .--watcher-view .portfolio-card__title {
+    animation: show-card-title 0.6s ease forwards 0.2s;
+  }
+  @keyframes show-card-title {
+    0% {
+      opacity: 0;
+      translate: 0 3%;
+    }
+    100% {
+      opacity: 1;
+      translate: 0 0;
+    }
+  }
+  .portfolio-card__text {
+    opacity: 0;
+    translate: 0 3%;
+  }
+  .--watcher-view .portfolio-card__text {
+    animation: show-card-text 0.6s ease forwards 0.3s;
+  }
+  @keyframes show-card-text {
+    0% {
+      opacity: 0;
+      translate: 0 3%;
+    }
+    100% {
+      opacity: 1;
+      translate: 0 0;
+    }
+  }
+  .portfolio-card__actions {
+    opacity: 0;
+    translate: 0 3%;
+  }
+  .--watcher-view .portfolio-card__actions {
+    animation: show-card-actions 0.6s ease forwards 0.4s;
+  }
+  @keyframes show-card-actions {
+    0% {
+      opacity: 0;
+      translate: 0 3%;
+    }
+    100% {
+      opacity: 1;
+      translate: 0 0;
+    }
   }
 }
 @media (max-width: 29.99875em) {
