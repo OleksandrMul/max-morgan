@@ -321,6 +321,9 @@ html:not([data-fls-touch]) .gallery__inner:has(.gallery__image:hover) .gallery__
   font-weight: 600;
   line-height: 1.3;
 }
+.item-advantage__digit {
+  font-variant-numeric: tabular-nums;
+}
 
 .portfolio-gallery {
   display: grid;

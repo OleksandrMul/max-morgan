@@ -2257,7 +2257,7 @@ function digitsCounter() {
   }
   function digitsCountersAnimate(digitsCounter2) {
     let startTimestamp = null;
-    const duration = parseFloat(digitsCounter2.dataset.flsDigcounterSpeed) ? parseFloat(digitsCounter2.dataset.flsDigcounterSpeed) : 1e3;
+    const duration = parseFloat(digitsCounter2.dataset.flsDigcounterSpeed) ? parseFloat(digitsCounter2.dataset.flsDigcounterSpeed) : 1200;
     const startValue = parseFloat(digitsCounter2.dataset.flsDigcounter);
     const format = digitsCounter2.dataset.flsDigcounterFormat ? digitsCounter2.dataset.flsDigcounterFormat : " ";
     const startPosition = 0;
